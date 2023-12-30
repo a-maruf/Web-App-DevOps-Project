@@ -6,7 +6,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 1. [Project Overview](#project-overview)
 2. [Milestone 1: Set up the Environment](#milestone-1-set-up-the-environment)
 3. [Milestone 2: Version Control](#milestone-2-version-control)
-4. [Upcoming Milestones](#upcoming-milestones)
+4. [Milestone 3: Containerization with Docker](#milestone-3-containerization-with-docker)
+5. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -27,6 +28,22 @@ The second milestone involved diving into the world of version control and worki
 8. **Revert Changes**: A new branch called `revert-delivery-date` was created. Used `git revert COMMIT_HASH` command to revert back to before the `delivery_date` column was implemented.
 
 A more detail documentation of implementing the new feature `delivery_date` column is contained within [Documentation - Implementing the ‘delivery_date’ Column.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Implementing%20the%20%E2%80%98delivery_date%E2%80%99%20Column.md) file.
+
+## Milestone 3: Containerization with Docker
+
+The third milestone involved containerizing the application using Docker and making it available on Docker Hub. The tasks completed in this milestone include:
+
+1. **Containerize the Web Application**: The application was containerized using Docker. A Dockerfile was created to define the application's environment, encapsulate all necessary dependencies, and configuration settings.
+
+2. **Build Docker Image**: The Docker image was built using the `docker build` command. The `-t` option was used to tag the image with a name for easy reference.
+
+3. **Run Docker Container Locally**: The Docker container was run locally using the `docker run` command. The `-p` option was used to map port 5000 from the local machine to the container.
+
+4. **Tag and Push to Docker Hub**: The Docker image was tagged and pushed to Docker Hub using the `docker tag` and `docker push` commands.
+
+5. **Verify Image on Docker Hub**: The Docker image was verified on Docker Hub by logging into Docker Hub and confirming that the image was listed within the repository.
+
+Detailed documentation of the process, including the Dockerfile and the Docker commands used, can be found in the [Documentation - Containerization with Docker.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Containerization%20with%20Docker.md) file in the root directory of the project.
 
 ## Upcoming Milestones
 The upcoming milestones in the project include:
