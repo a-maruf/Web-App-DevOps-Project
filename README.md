@@ -7,7 +7,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 2. [Milestone 1: Set up the Environment](#milestone-1-set-up-the-environment)
 3. [Milestone 2: Version Control](#milestone-2-version-control)
 4. [Milestone 3: Containerization with Docker](#milestone-3-containerization-with-docker)
-5. [Upcoming Milestones](#upcoming-milestones)
+5. [Milestone 4: Defining Networking Services with IaC](#milestone-4-defining-networking-services-with-iac)
+6. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -45,11 +46,25 @@ The third milestone involved containerizing the application using Docker and mak
 
 Detailed documentation of the process, including the Dockerfile and the Docker commands used, can be found in the [Documentation - Containerization with Docker.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Containerization%20with%20Docker.md) file in the root directory of the project.
 
+## Milestone 4: Defining Networking Services with IaC
+
+This fourth milestone focused on defining the networking services using Infrastructure as Code (IaC) with Terraform. We created a Terraform project and defined two modules: `networking-module` and `aks-cluster-module`.
+
+1. **Create Terraform Project and Modules:** Initialized a new Terraform project and created two directories for the Terraform modules.
+
+2. **Define the Networking Module Input Variables:** Defined the input variables in the `variables.tf` file inside the `networking-module` directory. These variables include `resource_group_name`, `location`, and `vnet_address_space`.
+
+3. **Define the Networking Resources and NSG Rules:** Defined the essential networking resources in the `main.tf` file inside the `networking-module` directory. These resources include an Azure Resource Group, a Virtual Network (VNet), two subnets (for the control plane and worker nodes), and a Network Security Group (NSG) with two inbound rules.
+
+4. **Define the Networking Module Output Variables:** Defined the output variables in the `outputs.tf` file inside the `networking-module` directory. These variables include `vnet_id`, `control_plane_subnet_id`, `worker_node_subnet_id`, `networking_resource_group_name`, and `aks_nsg_id`.
+
+5. **Initialize the Network Module:** Initialized the networking module to ensure it is ready to use within the main project.
+
+This milestone defined the necessary networking services using IaC, which is a crucial step in setting up a comprehensive end-to-end DevOps pipeline. Detailed documentation of the process, including the Dockerfile and the Docker commands used, can be found in the [Documentation - Defining Networking Services with IaC.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Defining%20Networking%20Services%20with%20IaC.md) file in the root directory of the project.
+
 ## Upcoming Milestones
 The upcoming milestones in the project include:
 
-- Milestone 3: Containerization with Docker
-- Milestone 4: Defining Networking Services with IaC
 - Milestone 5: Defining an AKS Cluster with IaC
 - Milestone 6: Create an AKS Cluster with IaC
 - Milestone 7: Kubernetes Deployment to AKS
