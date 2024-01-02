@@ -8,7 +8,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 3. [Milestone 2: Version Control](#milestone-2-version-control)
 4. [Milestone 3: Containerization with Docker](#milestone-3-containerization-with-docker)
 5. [Milestone 4: Defining Networking Services with IaC](#milestone-4-defining-networking-services-with-iac)
-6. [Upcoming Milestones](#upcoming-milestones)
+6. [Milestone 5: Defining an AKS Cluster with IaC](#milestone-5-defining-an-aks-cluster-with-iac)
+7. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -60,7 +61,22 @@ This fourth milestone focused on defining the networking services using Infrastr
 
 5. **Initialize the Network Module:** Initialized the networking module to ensure it is ready to use within the main project.
 
-This milestone defined the necessary networking services using IaC, which is a crucial step in setting up a comprehensive end-to-end DevOps pipeline. Detailed documentation of the process, including the Dockerfile and the Docker commands used, can be found in the [Documentation - Defining Networking Services with IaC.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Defining%20Networking%20Services%20with%20IaC.md) file in the root directory of the project.
+This milestone defined the necessary networking services using IaC, which is a crucial step in setting up a comprehensive end-to-end DevOps pipeline. Detailed documentation of the process can be found in the [Documentation - Defining Networking Services with IaC.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Defining%20Networking%20Services%20with%20IaC.md) file in the root directory of the project.
+
+## Milestone 5: Defining an AKS Cluster with IaC
+
+This fifth milestone focuses creating the AKS cluster module, bringing you one step closer to launching a Kubernetes cluster using Terraform.
+
+
+1. **Define the Cluster Module Input Variables** Defined the input variables in the `variables.tf` file inside the `aks-cluster-module` directory.
+
+2. **Define the Cluster Resources** Defined the necessary Azure resources for provisioning an AKS cluster in the `main.tf` file inside the `aks-cluster-module` directory.
+
+3. **Define the Cluster Module Output Variables** Defined the output variables in the `outputs.tf` file inside the `aks-cluster-module` directory.
+
+4. **Initialize the Cluster Module** Initialized the `aks-cluster-module` to ensure it is ready to use within the main project.
+
+Detailed documentation of the process can be found in the [Documentation - Defining an AKS Cluster with IaC.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Defining%20an%20AKS%20Cluster%20with%20IaC.md) file in the root directory of the project.
 
 ## Upcoming Milestones
 The upcoming milestones in the project include:
