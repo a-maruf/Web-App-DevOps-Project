@@ -21,20 +21,20 @@ provider "azurerm" {
 module "networking" {
   source = "./networking-module"
   
-  resource_group_name = "your_resource_group_name"
-  location            = "your_location"
-  vnet_address_space  = ["10.0.0.0/16"]
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  vnet_address_space  = var.vnet_address_space
 }
 
 module "aks_cluster" {
   source = "./aks-cluster-module"
 
-  aks_cluster_name           = "your_aks_cluster_name"
-  cluster_location           = "your_cluster_location"
-  dns_prefix                 = "your_dns_prefix"
-  kubernetes_version         = "your_kubernetes_version"
-  service_principal_client_id = var.client_id
-  service_principal_secret    = var.client_secret
+  aks_cluster_name           = "terraform-aks-cluster"
+  cluster_location           = var.location
+  dns_prefix                 = "myaks-project"
+  kubernetes_version         = "1.27.7"
+  service_principal_client_id = var.service_principal_client_id
+  service_principal_secret    = var.service_principal_client_secret
   resource_group_name         = var.resource_group_name
   resource_group_name         = module.networking.networking_resource_group_name
   vnet_id                     = module.networking.vnet_id
