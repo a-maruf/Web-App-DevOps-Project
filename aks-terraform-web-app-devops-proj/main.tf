@@ -33,9 +33,8 @@ module "aks_cluster" {
   cluster_location           = var.location
   dns_prefix                 = "myaks-project"
   kubernetes_version         = "1.27.7"
-  service_principal_client_id = var.service_principal_client_id
-  service_principal_secret    = var.service_principal_client_secret
-  resource_group_name         = var.resource_group_name
+  service_principal_client_id = var.client_id
+  service_principal_client_secret = var.client_secret
   resource_group_name         = module.networking.networking_resource_group_name
   vnet_id                     = module.networking.vnet_id
   control_plane_subnet_id     = module.networking.control_plane_subnet_id
