@@ -9,7 +9,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 4. [Milestone 3: Containerization with Docker](#milestone-3-containerization-with-docker)
 5. [Milestone 4: Defining Networking Services with IaC](#milestone-4-defining-networking-services-with-iac)
 6. [Milestone 5: Defining an AKS Cluster with IaC](#milestone-5-defining-an-aks-cluster-with-iac)
-7. [Upcoming Milestones](#upcoming-milestones)
+7. [Milestone 6: Creating an AKS Cluster with IaC](#milestone-6-creating-an-aks-cluster-with-iac)
+8. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -67,7 +68,6 @@ This milestone defined the necessary networking services using IaC, which is a c
 
 This fifth milestone focuses creating the AKS cluster module, bringing you one step closer to launching a Kubernetes cluster using Terraform.
 
-
 1. **Define the Cluster Module Input Variables** Defined the input variables in the `variables.tf` file inside the `aks-cluster-module` directory.
 
 2. **Define the Cluster Resources** Defined the necessary Azure resources for provisioning an AKS cluster in the `main.tf` file inside the `aks-cluster-module` directory.
@@ -78,11 +78,22 @@ This fifth milestone focuses creating the AKS cluster module, bringing you one s
 
 Detailed documentation of the process can be found in the [Documentation - Defining an AKS Cluster with IaC.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Defining%20an%20AKS%20Cluster%20with%20IaC.md) file in the root directory of the project.
 
+## Milestone 6: Creating an AKS Cluster with IaC
+
+1. **Define the Project Main Configuration** Defined the Azure provider block to enable authentication to Azure using service principal credentials and integrated the `networking-module` in the `main.tf` file in the main project directory.
+
+2. **Integrate the Networking Module** Integrated the `networking-module` in the `main.tf` file in the main project directory. This integration will ensure that the networking resources previously defined in their respective module are included, and therefore accessible in the main project.
+
+3. **Integrate the Cluster Module** Integrated the `aks-cluster-module` in the `main.tf` file in the main project directory. 
+	Integrate the cluster module in the main project configuration file. This step connects the AKS cluster specifications to the main project, as well as allowing you to provision the cluster within the previously defined networking infrastructure. 
+
+4. **Apply the Main Project Configuration** Within the main project directory initialize the Terraform project. Once the project is initialized, apply the Terraform configuration. This will initiate the creation of the defined infrastructure, including the networking resources and AKS cluster.
+
+5. **Access the AKS Cluster** Retrieve the kubeconfig file once the AKS cluster has been provisioned using `az aks get-credentials --resource-group <your-resource-group> --name <your-aks-cluster-name>`. This configuration file allows you to connect to the AKS cluster securely. Connect to the newly created cluster to ensure that the provisioning process was successful and the cluster is operational.
+
 ## Upcoming Milestones
 The upcoming milestones in the project include:
 
-- Milestone 5: Defining an AKS Cluster with IaC
-- Milestone 6: Create an AKS Cluster with IaC
 - Milestone 7: Kubernetes Deployment to AKS
 - Milestone 8: CI/CD Pipeline with Azure DevOps
 - Milestone 9: AKS Cluster Monitoring
