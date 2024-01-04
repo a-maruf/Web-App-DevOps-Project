@@ -91,6 +91,8 @@ Detailed documentation of the process can be found in the [Documentation - Defin
 
 5. **Access the AKS Cluster** Retrieve the kubeconfig file once the AKS cluster has been provisioned using `az aks get-credentials --resource-group <your-resource-group> --name <your-aks-cluster-name>`. This configuration file allows you to connect to the AKS cluster securely. Connect to the newly created cluster to ensure that the provisioning process was successful and the cluster is operational.
 
+Detailed documentation of the process can be found in the [Documentation - Creating an AKS Cluster with IaC.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Creating%20an%20AKS%20Cluster%20with%20IaC.md) file in the root directory of the project.
+
 ## Upcoming Milestones
 The upcoming milestones in the project include:
 
