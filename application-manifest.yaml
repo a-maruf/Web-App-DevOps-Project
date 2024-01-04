@@ -1,3 +1,5 @@
+# Deployment manifest
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: <your-dockerhub-username>/<your-image-name>:latest
+        image: amaruf1/web-app-devops-project:latest
         ports:
         - containerPort: 5000
       strategy:
@@ -22,3 +24,20 @@ spec:
         rollingUpdate:
           maxUnavailable: 1
           maxSurge: 1
+
+---
+
+# Service manifest
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app-service
+spec:
+  selector:
+    app: flask-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
