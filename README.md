@@ -10,7 +10,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 5. [Milestone 4: Defining Networking Services with IaC](#milestone-4-defining-networking-services-with-iac)
 6. [Milestone 5: Defining an AKS Cluster with IaC](#milestone-5-defining-an-aks-cluster-with-iac)
 7. [Milestone 6: Creating an AKS Cluster with IaC](#milestone-6-creating-an-aks-cluster-with-iac)
-8. [Upcoming Milestones](#upcoming-milestones)
+8. [Milestone 7: Kubernetes Deployment to AKS](#milestone-7-kubernetes-deployment-to-aks)
+9. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -93,10 +94,21 @@ Detailed documentation of the process can be found in the [Documentation - Defin
 
 Detailed documentation of the process can be found in the [Documentation - Creating an AKS Cluster with IaC.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Creating%20an%20AKS%20Cluster%20with%20IaC.md) file in the root directory of the project.
 
+## Milestone 7: Kubernetes Deployment to AKS
+
+1. **Deployment Manifests** Defined the Deployment and Service manifests for our application. The Deployment manifest, named `flask-app-deployment`, helps deploy our containerized web application onto the Terraform-provisioned AKS cluster.
+
+2. **Service Manifests** Defined a Service in the same `application-manifest.yaml` file. The Service manifest, named `flask-app-service`, facilitates internal communication within the AKS cluster.
+
+3. **Deployment Strategy** Implemented the Rolling Updates deployment strategy. During updates, a maximum of one pod deploys while one pod becomes temporarily unavailable, maintaining application availability.
+
+4. **Testing and Validation** Tested and validated by performing port forwarding to a local machine using the `kubectl port-forward <pod-name> 5000:5000` command, which allowed us to interact with our application locally. Accessed web application locally at `http://127.0.0.1:5000` and thoroughly tested its functionality.
+
+5. **Distribution Plan** For internal users within our organization, we plan to distribute the application by providing them with access to the AKS cluster. They can then access the application within the cluster without relying on port forwarding. To share the application with external users, we would consider exposing our service to the internet by changing the service type from ClusterIP to LoadBalancer. This would provide an externally accessible IP address. However, we would need to implement additional security measures, such as authentication and authorization mechanisms, to ensure secure access.
+
 ## Upcoming Milestones
 The upcoming milestones in the project include:
 
-- Milestone 7: Kubernetes Deployment to AKS
 - Milestone 8: CI/CD Pipeline with Azure DevOps
 - Milestone 9: AKS Cluster Monitoring
 - Milestone 10: AKS Integration with Azure Key Vault for Secrets Management
