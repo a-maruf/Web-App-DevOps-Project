@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: amaruf1/web-app-devops-project:latest
+        image: amaruf1/web-app-devops-project:v1.0
         ports:
         - containerPort: 5000
   strategy:
