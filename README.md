@@ -106,6 +106,8 @@ Detailed documentation of the process can be found in the [Documentation - Creat
 
 5. **Distribution Plan** For internal users within our organization, we plan to distribute the application by providing them with access to the AKS cluster. They can then access the application within the cluster without relying on port forwarding. To share the application with external users, we would consider exposing our service to the internet by changing the service type from ClusterIP to LoadBalancer. This would provide an externally accessible IP address. However, we would need to implement additional security measures, such as authentication and authorization mechanisms, to ensure secure access.
 
+Detailed documentation of the process can be found in the [Documentation - Kubernetes Deployment to AKS.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Kubernetes%20Deployment%20to%20AKS.md) file in the root directory of the project.
+
 ## Upcoming Milestones
 The upcoming milestones in the project include:
 
