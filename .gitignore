@@ -1,0 +1,9 @@
+# Terraform files created after initialisation 'terraform init'.
+aks-terraform-web-app-devops-proj/.terraform.lock.hcl
+aks-terraform-web-app-devops-proj/.terraform/
+aks-terraform-web-app-devops-proj/aks-cluster-module/.terraform.lock.hcl       
+aks-terraform-web-app-devops-proj/aks-cluster-module/.terraform/
+aks-terraform-web-app-devops-proj/kubeconfig.yaml
+aks-terraform-web-app-devops-proj/networking-module/.terraform.lock.hcl        
+aks-terraform-web-app-devops-proj/networking-module/.terraform/
+aks-terraform-web-app-devops-proj/terraform.tfstate

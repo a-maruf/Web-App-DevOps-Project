@@ -30,3 +30,7 @@ EXPOSE 5000
 
 # Step 6 - Define Startup Command
 CMD ["python", "app.py"]
+
+
+# Temp Note: Deleted old 'dockerfile' due to not syncing with GitHub
+# after renaming to 'Dockerfile'.
