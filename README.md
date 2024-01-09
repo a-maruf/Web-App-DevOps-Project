@@ -11,7 +11,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 6. [Milestone 5: Defining an AKS Cluster with IaC](#milestone-5-defining-an-aks-cluster-with-iac)
 7. [Milestone 6: Creating an AKS Cluster with IaC](#milestone-6-creating-an-aks-cluster-with-iac)
 8. [Milestone 7: Kubernetes Deployment to AKS](#milestone-7-kubernetes-deployment-to-aks)
-9. [Upcoming Milestones](#upcoming-milestones)
+9. [Milestone 8: CI/CD Pipeline with Azure DevOps](#milestone-8-cicd-pipeline-with-azure-devops)
+10. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -108,10 +109,29 @@ Detailed documentation of the process can be found in the [Documentation - Creat
 
 Detailed documentation of the process can be found in the [Documentation - Kubernetes Deployment to AKS.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20Kubernetes%20Deployment%20to%20AKS.md) file in the root directory of the project.
 
+## Milestone 8: CI/CD Pipeline with Azure DevOps
+
+This milestone uses a Continuous Integration/Continuous Deployment (CI/CD) pipeline in Azure DevOps for automatic deployment of the application. 
+ 
+1. **Create an Azure DevOps Project** A new Azure DevOps project named 'Web-App-Azure-DevOps-Project' was created. This serves as the foundation for the CI/CD pipeline setup. 
+ 
+2. **Initiate Azure DevOps Pipeline Setup** The process of creating an Azure DevOps Pipeline was initiated. The source repository for the pipeline was configured to be the GitHub repository 'a-maruf/Web-App-DevOps-Project'. The pipeline was created using a Starter Pipeline template. 
+ 
+3. **Establish an Azure DevOps-Docker Hub Connection** A service connection was set up between Azure DevOps and Docker Hub. This connection facilitates the seamless integration of the CI/CD pipeline with the Docker Hub container registry. 
+ 
+4. **Configure Pipeline for Docker Image Build and Push** The pipeline was modified to enable it to build and push a Docker image to Docker Hub. The pipeline is set up to automatically run each time there is a push to the main branch of the application repository. 
+ 
+5. **Establish an Azure DevOps-AKS Connection** An AKS service connection was created and configured within Azure DevOps. This service connection establishes a secure link between the CI/CD pipeline and the AKS cluster. 
+ 
+6. **Configure Pipeline for Kubernetes Deployment** The CI/CD pipeline was modified to incorporate the Deploy to Kubernetes task with the deploy kubectl command. This step leverages the deployment manifest available in the application repository, as well as the previously established ASK connection to facilitate the automatic deployment of the application to the AKS cluster. 
+ 
+7. **Testing and Validation of CI/CD** The functionality of the application was tested by accessing it through port forwarding. The application was accessed by navigating to `localhost:5000` in a web browser. This validates the effectiveness of the CI/CD pipeline in application deployment.
+
+Detailed documentation of the process can be found in the [Documentation - CICD Pipeline with Azure DevOps.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20CICD%20Pipeline%20with%20Azure%20DevOps.md) file in the root directory of the project.
+
 ## Upcoming Milestones
 The upcoming milestones in the project include:
 
-- Milestone 8: CI/CD Pipeline with Azure DevOps
 - Milestone 9: AKS Cluster Monitoring
 - Milestone 10: AKS Integration with Azure Key Vault for Secrets Management
 
