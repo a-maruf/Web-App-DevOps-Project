@@ -12,7 +12,7 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 7. [Milestone 6: Creating an AKS Cluster with IaC](#milestone-6-creating-an-aks-cluster-with-iac)
 8. [Milestone 7: Kubernetes Deployment to AKS](#milestone-7-kubernetes-deployment-to-aks)
 9. [Milestone 8: CI/CD Pipeline with Azure DevOps](#milestone-8-cicd-pipeline-with-azure-devops)
-10.	Milestone 9: AKS Cluster Monitoring
+10.	[Milestone 9: AKS Cluster Monitoring](#milestone-9-aks-cluster-monitoring)
 11. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
@@ -143,6 +143,8 @@ This milestone focuses on ensuring effective monitoring and alerting for the AKS
 4. **Set Up Disk Used Percentages Alarm** Set up an alert rule to trigger an alarm when the used disk percentage in the AKS cluster exceeds 90%.
 
 5. **Modify CPU and Memory Alert Rules** Adjusted the alert rules for CPU usage and memory working set percentage to trigger when they exceed 80%. CPU and memory are critical resources in our AKS cluster.
+
+Detailed documentation of the process can be found in the [Documentation - AKS Cluster Monitoring.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20AKS%20Cluster%20Monitoring.md) file in the root directory of the project.
 
 ## Upcoming Milestones
 The upcoming milestones in the project include:
