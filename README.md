@@ -12,7 +12,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 7. [Milestone 6: Creating an AKS Cluster with IaC](#milestone-6-creating-an-aks-cluster-with-iac)
 8. [Milestone 7: Kubernetes Deployment to AKS](#milestone-7-kubernetes-deployment-to-aks)
 9. [Milestone 8: CI/CD Pipeline with Azure DevOps](#milestone-8-cicd-pipeline-with-azure-devops)
-10. [Upcoming Milestones](#upcoming-milestones)
+10.	Milestone 9: AKS Cluster Monitoring
+11. [Upcoming Milestones](#upcoming-milestones)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -129,10 +130,23 @@ This milestone uses a Continuous Integration/Continuous Deployment (CI/CD) pipel
 
 Detailed documentation of the process can be found in the [Documentation - CICD Pipeline with Azure DevOps.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20CICD%20Pipeline%20with%20Azure%20DevOps.md) file in the root directory of the project.
 
+## Milestone 9: AKS Cluster Monitoring
+
+This milestone focuses on ensuring effective monitoring and alerting for the AKS cluster, which is the backbone of our application's deployment strategy.
+
+1. **Enable Container Insights for AKS** Container Insights was enabled for our AKS cluster.
+
+2. **Create Metric Explorer Charts** Created and configured the following charts in Metrics Explorer: `Average Node CPU Usage`, `Average Pod Count`, `Used Disk Percentage`, and `Bytes Read and Written per Second`.
+
+3. **Log Analytics Configuration** Configured Log Analytics to execute and save the following logs: `Average Node CPU Usage Percentage per Minute`, `Average Node Memory Usage Percentage per Minute`, `Pods Counts with Phase`, `Find Warning Value in Container Logs`, and `Monitoring Kubernetes Events`.
+
+4. **Set Up Disk Used Percentages Alarm** Set up an alert rule to trigger an alarm when the used disk percentage in the AKS cluster exceeds 90%.
+
+5. **Modify CPU and Memory Alert Rules** Adjusted the alert rules for CPU usage and memory working set percentage to trigger when they exceed 80%. CPU and memory are critical resources in our AKS cluster.
+
 ## Upcoming Milestones
 The upcoming milestones in the project include:
 
-- Milestone 9: AKS Cluster Monitoring
 - Milestone 10: AKS Integration with Azure Key Vault for Secrets Management
 
 These milestones will be updated as they are completed.
