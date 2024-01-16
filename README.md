@@ -2,6 +2,8 @@
 
 This project involves building a comprehensive end-to-end DevOps pipeline to support an internal web application designed to manage and monitor deliveries across the company. The project is divided into ten milestones, each with several tasks.
 
+![DevOps Pipeline Architecture.png](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Images/DevOps%20Pipeline%20Architecture.png)
+
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Milestone 1: Set up the Environment](#milestone-1-set-up-the-environment)
@@ -13,7 +15,7 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 8. [Milestone 7: Kubernetes Deployment to AKS](#milestone-7-kubernetes-deployment-to-aks)
 9. [Milestone 8: CI/CD Pipeline with Azure DevOps](#milestone-8-cicd-pipeline-with-azure-devops)
 10.	[Milestone 9: AKS Cluster Monitoring](#milestone-9-aks-cluster-monitoring)
-11. [Upcoming Milestones](#upcoming-milestones)
+11. [Milestone 10: AKS Integration with Azure Key Vault for Secrets Management](#milestone-10-aks-integration-with-azure-key-vault-for-secrets-management)
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
@@ -146,9 +148,22 @@ This milestone focuses on ensuring effective monitoring and alerting for the AKS
 
 Detailed documentation of the process can be found in the [Documentation - AKS Cluster Monitoring.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20AKS%20Cluster%20Monitoring.md) file in the root directory of the project.
 
-## Upcoming Milestones
-The upcoming milestones in the project include:
+## Milestone 10: AKS Integration with Azure Key Vault for Secrets Management
 
-- Milestone 10: AKS Integration with Azure Key Vault for Secrets Management
+This milestone focuses on integrating Azure Kubernetes Service (AKS) with Azure Key Vault for secure management of secrets. The tasks include creating an Azure Key Vault, assigning the Key Vault Administrator role, creating secrets in Key Vault, enabling managed identity for AKS, assigning permissions to the managed identity, updating the application code, and conducting end-to-end testing in AKS.
 
-These milestones will be updated as they are completed.
+1. **Create an Azure Key Vault** An Azure Key Vault was created for securely storing and accessing secrets.
+
+2. **Assign Key Vault Administrator Role** The Key Vault Administrator role was assigned to the Microsoft Entra ID user to manage secrets within the Key Vault.
+
+3. **Create Secrets in Key Vault** Four secrets were created in the Key Vault to secure the credentials used within the application to connect to the backend database.
+
+4. **Enable Managed Identity for AKS** Managed identity was enabled for the AKS cluster to allow it to authenticate and interact securely with the Key Vault.
+
+5. **Assign Permissions to Managed Identity** The Key Vault Secrets Officer role was assigned to the managed identity associated with AKS, allowing it to retrieve and manage secrets.
+
+6. **Update the Application Code** The Azure Identity and Azure Key Vault libraries were integrated into the Python application code. The code was modified to use managed identity credentials for secure retrieval of database connection details from the Key Vault.
+
+7. **End-to-End Testing in AKS** Thorough testing of the modified application was conducted locally and within the AKS environment. The application was able to securely retrieve and utilize the database connections details from Key Vault using managed identity credentials.
+
+Detailed documentation of the process can be found in the [Documentation - AKS Integration with Azure Key Vault for Secrets Management.md](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Documentation%20-%20AKS%20Integration%20with%20Azure%20Key%20Vault%20for%20Secrets%20Management.md) file in the root directory of the project.
