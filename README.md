@@ -2,8 +2,6 @@
 
 This project involves building a comprehensive end-to-end DevOps pipeline to support an internal web application designed to manage and monitor deliveries across the company. The project is divided into ten milestones, each with several tasks.
 
-![DevOps Pipeline Architecture.png](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Images/DevOps%20Pipeline%20Architecture.png)
-
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Milestone 1: Set up the Environment](#milestone-1-set-up-the-environment)
@@ -19,6 +17,8 @@ This project involves building a comprehensive end-to-end DevOps pipeline to sup
 
 ## Project Overview
 The project involves implementing version control to allow the team to work collaboratively and integrate new features into the web application. It also includes packing the application and its dependencies using Docker to ensure the application's consistency and portability. The project leverages infrastructure as code (IaC) to define and manage resources within Azure and uses Kubernetes to orchestrate the deployment of the containerized application. Lastly, it employs CI/CD practices to automate the build and deployment of the application.
+
+![DevOps Pipeline Architecture.png](https://github.com/a-maruf/Web-App-DevOps-Project/blob/main/Images/DevOps%20Pipeline%20Architecture.png)
 
 ## Milestone 1: Set up the Environment
 The first milestone involved setting up GitHub. A personal copy of the [Web-App-DevOps-Project](https://github.com/maya-a-iuga/Web-App-DevOps-Project) GitHub repository was created by forking the repository. This copy is a separate repository hosted on the GitHub account, allowing for changes to the forked repository, creation of branches, committing code, and managing it like any other repository.
